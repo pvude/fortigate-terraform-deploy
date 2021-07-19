@@ -40,4 +40,11 @@ resource "azurerm_linux_virtual_machine" "client" {
     sku       = "16.04-LTS"
     version   = "latest"
   }
+  
+  boot_diagnostics {
+    enabled = "true"
+    storage_uri = azurerm_storage_account.fgtstorageaccount.primary_blob_endpoint
+  }
+
+
 }

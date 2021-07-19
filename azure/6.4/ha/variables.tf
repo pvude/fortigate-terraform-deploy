@@ -14,7 +14,7 @@ variable "size" {
 
 variable "location" {
   type    = string
-  default = "westus"
+  default = "West Europe"
 }
 
 // To use custom image 
@@ -77,7 +77,6 @@ variable "adminusername" {
 
 variable "adminpassword" {
   type    = string
-  default = "Fortinet123#"
 }
 
 // HTTPS Port
