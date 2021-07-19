@@ -42,8 +42,7 @@ resource "azurerm_linux_virtual_machine" "client" {
   }
   
   boot_diagnostics {
-    enabled = "true"
-    storage_uri = azurerm_storage_account.fgtstorageaccount.primary_blob_endpoint
+    storage_account_uri = azurerm_storage_account.fgtstorageaccount.primary_blob_endpoint
   }
 
 
