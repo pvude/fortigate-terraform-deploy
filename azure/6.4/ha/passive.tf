@@ -59,6 +59,7 @@ resource "azurerm_virtual_machine" "passivefgtvm" {
   network_interface_ids        = [azurerm_network_interface.passiveport1.id, azurerm_network_interface.passiveport2.id, azurerm_network_interface.passiveport3.id, azurerm_network_interface.passiveport4.id]
   primary_network_interface_id = azurerm_network_interface.passiveport1.id
   vm_size                      = var.size
+  zones                        = [2]
 
   storage_image_reference {
     publisher = var.custom ? null : var.publisher

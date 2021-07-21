@@ -19,6 +19,7 @@ resource "azurerm_virtual_machine" "customactivefgtvm" {
   network_interface_ids        = [azurerm_network_interface.activeport1.id, azurerm_network_interface.activeport2.id, azurerm_network_interface.activeport3.id, azurerm_network_interface.activeport4.id]
   primary_network_interface_id = azurerm_network_interface.activeport1.id
   vm_size                      = var.size
+  zones                        = [1]
 
   storage_image_reference {
     id = var.custom ? element(azurerm_image.custom.*.id, 0) : null
