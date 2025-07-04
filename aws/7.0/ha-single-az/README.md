@@ -3,9 +3,9 @@
 A Terraform script to deploy a FortiGate-VM Cluster on AWS in Single AZ Topology
 
 ## Requirements
-* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 0.12.0
-* Terraform Provider AWS 2.58.0
-* Terraform Provider Template 2.1.2
+* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 1.0.0
+* Terraform Provider AWS 3.63.0
+* Terraform Provider Template 2.2.0
 
 
 ## Deployment overview
@@ -15,10 +15,16 @@ Terraform deploys the following components:
    - Two Network Security Group rules: one for external, one for internal.
    - Two Route tables: one for internal subnet and one for external subnet.
 
+![HA-Single-AZ-architecture](./aws-ha-single-az.png?raw=true "HA Single AZ Architecture")
+
+
 ## Deployment
 To deploy the FortiGate-VM to AWS:
 1. Clone the repository.
 2. Customize variables in the `terraform.tfvars.example` and `variables.tf` file as needed.  And rename `terraform.tfvars.example` to `terraform.tfvars`.
+> [!NOTE]
+> In the license_format variable, there are two different choices.
+> Either token or file.  Token is FortiFlex token, and file is FortiGate-VM license file.
 3. Initialize the providers and modules:
    ```sh
    $ cd XXXXX

@@ -18,13 +18,15 @@ variable "token" {
   type    = string
   default = "<gcp oauth access token>"
 }
+
 # FortiGate Image name
-# 7.0.0 payg is projects/fortigcp-project-001/global/images/fortinet-fgtondemand-700-20210407-001-w-license
-# 7.0.0 byol is projects/fortigcp-project-001/global/images/fortinet-fgt-700-20210407-001-w-license
+# 7.0.15 payg is projects/fortigcp-project-001/global/images/fortinet-fgtondemand-7015-20240408-001-w-license
+# 7.0.15 byol is projects/fortigcp-project-001/global/images/fortinet-fgt-7015-20240408-001-w-license
 variable "image" {
   type    = string
-  default = "projects/fortigcp-project-001/global/images/fortinet-fgtondemand-700-20210407-001-w-license"
+  default = "projects/fortigcp-project-001/global/images/fortinet-fgtondemand-7015-20240408-001-w-license"
 }
+
 # GCP instance machine type
 variable "machine" {
   type    = string

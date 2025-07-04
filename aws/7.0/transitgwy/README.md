@@ -6,9 +6,9 @@ The Transit Gateway is meant to supersede the more complex and expensive Transit
 
 
 ## Requirements
-* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 0.12.0
-* Terraform Provider AWS 2.59.0
-* Terraform Provider Template 2.1.2
+* [Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html) >= 1.0.0
+* Terraform Provider AWS 3.63.0
+* Terraform Provider Template 2.2.0
 
 ## Deployment Overview
 A Transit Gateway relies on Route Tables. By default, a new Route Table is created in the Transit Gateway, which populates with the routing info toward every VPC attached to the gateway (the full mesh scenario)
@@ -38,6 +38,9 @@ To enable such a scenario, three Transit Gateway Route Tables are created.  One 
 ## Deployment
 * Clone the repository.
 * Change ACCESS_KEY and SECRET_KEY values in terraform.tfvars.example.  And rename `terraform.tfvars.example` to `terraform.tfvars`.
+> [!NOTE]
+> In the license_format variable, there are two different choices.
+> Either token or file.  Token is FortiFlex token, and file is FortiGate-VM license file.
 * Change parameters in the variables.tf. 
 * Initialize the providers and modules:
   ```sh
